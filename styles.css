@@ -1,0 +1,169 @@
+/* ========================================
+   Global Stylesheet
+   Best Practices:
+   - Mobile-first approach
+   - CSS variables for theming
+   - BEM-like naming conventions
+   - Responsive design
+   - Accessibility considerations
+   ======================================== */
+
+/* CSS Custom Properties (Variables) */
+:root {
+  /* Primary Colors */
+  --primary-bg-color: #ff0000; /* Pure Red */
+  --primary-glow-color: rgba(255, 0, 0, 0.7);
+  
+  /* Spacing */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+  
+  /* Typography */
+  --font-primary: 'Arial', sans-serif;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.5rem;
+  --font-size-xl: 2rem;
+  
+  /* Shadows */
+  --shadow-glow: 0 0 20px var(--primary-glow-color);
+  --shadow-text: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+  /* Transitions */
+  --transition-base: all 0.3s ease;
+}
+
+/* Reset and Base Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HTML and Body Reset */
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  /* Background: Pure red with glow effect */
+  background-color: var(--primary-bg-color);
+  
+  /* Glow effect using box-shadow on pseudo-element */
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  padding: var(--spacing-md);
+  font-family: var(--font-primary);
+  color: #ffffff; /* White text for contrast */
+  line-height: 1.6;
+}
+
+/* Glow Effect for Body */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    var(--primary-glow-color) 0%,
+    transparent 70%
+  );
+  pointer-events: none; /* Ensures it doesn't interfere with clicks */
+  z-index: -1;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+  text-shadow: var(--shadow-text);
+}
+
+h1 {
+  font-size: var(--font-size-xl);
+  text-align: center;
+  margin-top: var(--spacing-lg);
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+}
+
+/* Flexbox Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Image Styles */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: var(--shadow-glow);
+}
+
+/* Accessibility: Focus Styles */
+:focus {
+  outline: 2px solid var(--primary-glow-color);
+  outline-offset: 2px;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  body {
+    padding: var(--spacing-lg);
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Animation for Glow Effect (Optional) */
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 20px var(--primary-glow-color);
+  }
+  50% {
+    box-shadow: 0 0 30px var(--primary-glow-color), 0 0 40px var(--primary-glow-color);
+  }
+  100% {
+    box-shadow: 0 0 20px var(--primary-glow-color);
+  }
+}
+
+.glow-animation {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-lg {
+  margin-top: var(--spacing-lg);
+}
+
+.mb-lg {
+  margin-bottom: var(--spacing-lg);
+}
