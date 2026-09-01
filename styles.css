@@ -14,6 +14,9 @@
   --primary-bg-color: #ff0000; /* Pure Red */
   --primary-glow-color: rgba(255, 0, 0, 0.7);
   
+  /* Text Colors */
+  --text-color: #ffffff; /* White */
+  
   /* Spacing */
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
@@ -59,7 +62,7 @@ body {
   margin: 0;
   padding: var(--spacing-md);
   font-family: var(--font-primary);
-  color: #ffffff; /* White text for contrast */
+  color: var(--text-color); /* White text */
   line-height: 1.6;
 }
 
@@ -85,12 +88,21 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: var(--spacing-sm);
   line-height: 1.2;
   text-shadow: var(--shadow-text);
+  color: var(--text-color); /* White text */
 }
 
 h1 {
   font-size: var(--font-size-xl);
   text-align: center;
   margin-top: var(--spacing-lg);
+}
+
+/* Birthday Text Styling */
+.birthday-text {
+  color: var(--text-color); /* White text */
+  font-size: var(--font-size-lg);
+  margin-top: var(--spacing-sm);
+  text-shadow: var(--shadow-text);
 }
 
 /* Layout Utilities */
@@ -121,6 +133,11 @@ img {
   box-shadow: var(--shadow-glow);
 }
 
+/* Text Alignment */
+.text-center {
+  text-align: center;
+}
+
 /* Accessibility: Focus Styles */
 :focus {
   outline: 2px solid var(--primary-glow-color);
@@ -135,6 +152,10 @@ img {
   
   h1 {
     font-size: 2.5rem;
+  }
+  
+  .birthday-text {
+    font-size: 1.8rem;
   }
 }
 
@@ -156,10 +177,6 @@ img {
 }
 
 /* Utility Classes */
-.text-center {
-  text-align: center;
-}
-
 .mt-lg {
   margin-top: var(--spacing-lg);
 }
