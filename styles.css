@@ -15,7 +15,7 @@
   --primary-glow-color: rgba(255, 0, 0, 0.7);
   
   /* Text Colors */
-  --text-color: #ffffff; /* White */
+  --text-color: #ff0000; /* Red for mason */
   --birthday-color: #000000; /* Black */
   
   /* Spacing */
@@ -63,7 +63,7 @@ body {
   margin: 0;
   padding: var(--spacing-md);
   font-family: var(--font-primary);
-  color: var(--text-color); /* Default text color */
+  color: var(--text-color);
   line-height: 1.6;
 }
 
@@ -97,9 +97,9 @@ h1 {
   margin-top: var(--spacing-lg);
 }
 
-/* White Text for Mason */
+/* Red Text for Mason */
 .white-text {
-  color: var(--text-color); /* White */
+  color: var(--text-color); /* Red */
 }
 
 /* Birthday Text Styling */
@@ -107,7 +107,7 @@ h1 {
   color: var(--birthday-color); /* Black */
   font-size: var(--font-size-lg);
   margin-top: var(--spacing-sm);
-  text-shadow: none; /* Remove shadow for black text */
+  text-shadow: none;
 }
 
 /* Layout Utilities */
