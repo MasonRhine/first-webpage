@@ -15,7 +15,7 @@
   --primary-glow-color: rgba(255, 0, 0, 0.7);
   
   /* Text Colors */
-  --text-color: #ff0000; /* Red for mason */
+  --text-color: #00ff00; /* Green for mason */
   --birthday-color: #000000; /* Black */
   
   /* Spacing */
@@ -97,9 +97,9 @@ h1 {
   margin-top: var(--spacing-lg);
 }
 
-/* Red Text for Mason */
+/* Green Text for Mason */
 .white-text {
-  color: var(--text-color); /* Red */
+  color: var(--text-color); /* Green */
 }
 
 /* Birthday Text Styling */
